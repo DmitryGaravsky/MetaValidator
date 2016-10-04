@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DE18E09-E1B7-486E-8F59-F94895B2EB6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetaValidator.Core</RootNamespace>
+    <AssemblyName>MetaValidator.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\DiagnosticScope.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\Configurator.cs" />
+    <Compile Include="Constraints\Type\IsType.cs" />
+    <Compile Include="Diagnostics\Factories\DiagnosticScopeFactory.cs" />
+    <Compile Include="Diagnostics\Factories\DiagnosticContextFactory.cs" />
+    <Compile Include="Diagnostics\Diagnostic.cs" />
+    <Compile Include="Diagnostics\DiagnosticContext.cs" />
+    <Compile Include="Diagnostics\Factories\DiagnosticScopeSettingsResolver.cs" />
+    <Compile Include="Diagnostics\IDiagnosticContext.cs" />
+    <Compile Include="Configuration\IConfiguration.cs" />
+    <Compile Include="Diagnostics\IDiagnosticContextFactory.cs" />
+    <Compile Include="Diagnostics\IDiagnosticScope.cs" />
+    <Compile Include="Diagnostics\IDiagnosticScopeFactory.cs" />
+    <Compile Include="FluentAPI\Configuration\Configuration.cs" />
+    <Compile Include="FluentAPI\Utils\MayBe.cs" />
+    <Compile Include="Constraints\Assembly\Assembly.cs" />
+    <Compile Include="Constraints\Assembly\DesignAssembly.cs" />
+    <Compile Include="Constraints\IMetaConstraint.cs" />
+    <Compile Include="Constraints\MetaConstraint.cs" />
+    <Compile Include="Constraints\Type\Type.cs" />
+    <Compile Include="Diagnostics\IDiagnostic.cs" />
+    <Compile Include="FluentAPI\Constraints\Member.cs" />
+    <Compile Include="FluentAPI\Guards.cs" />
+    <Compile Include="Common\ISpecification.cs" />
+    <Compile Include="Constraints\Member\Public.cs" />
+    <Compile Include="Constraints\Member\Property\ReadOnly.cs" />
+    <Compile Include="Common\Specification.cs" />
+    <Compile Include="FluentAPI\Operations.cs" />
+    <Compile Include="Constraints\Member\Member.cs" />
+    <Compile Include="Constraints\Type\PublicType.cs" />
+    <Compile Include="Constraints\Type\StaticType.cs" />
+    <Compile Include="FluentAPI\Operators.cs" />
+    <Compile Include="FluentAPI\Constraints\Type.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Constraints\Attribute\HasAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
